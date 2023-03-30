@@ -1,5 +1,4 @@
-import data from './data'
-import './index.scss'
+import './main.css'
 
 const root = document.querySelector('#app')
 
