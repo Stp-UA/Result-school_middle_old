@@ -1,14 +1,23 @@
-import './main.css'
+import './clear.css';
+import './main.css';
+import './slider.css';
+import './decoration.css';
 
-const root = document.querySelector('#app')
 
-function renderItem(item, index) {
-  const li = document.createElement('li')
-  li.textContent = item.title
-  if (index % 2 === 0) {
-    li.style.color = 'red'
-  }
-  root.append(li)
-}
+let play = false;                               // воспроизводится ли сейчас музыка
 
-data.forEach(renderItem)
+let audio = new Audio();
+audio.src = './assets/sounds/summer.mp3';
+
+let btns = document.querySelector('.buttons');
+let bg = document.querySelector('#bg');
+btns.onclick = function (event) {
+    let targ = event.target;
+    let choice;
+    if (targ.id) {
+        choice = `${targ.id}`;                  // если кликнули на картинке
+    } else {
+        choice = `${targ.parentElement.id}`;    // если кликнули на иконке внутри картинки
+    }
+    bg.className = choice;
+};

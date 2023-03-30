@@ -8,13 +8,34 @@
     <title>Webpack Home work</title>
   </head>
   <body>
-    <div class="bg">
-      <div class="grid">
-        <div id="pageHeader">Weather sounds</div>
-        <div id="pageSum">Summmer</div>
-        <div id="pageAut">Autumn</div>
-        <div id="pageWin">Winter</div>
-        <div id="pageFooter">Громкость</div>
+    <div id="bg" class="summer">
+      <div class="out">
+        <div class="containerIn">
+          <div id="pageHeader">Weather sounds</div>
+          <div class="buttons">
+            <div id="summer" class="summerIcon button rotate">
+              <img class="icon" src="./summer.svg" alt="" />
+            </div>
+            <div id="autumn" class="autumnIcon button rotate">
+              <img class="icon" src="./autumn.svg" alt="" />
+            </div>
+            <div id="winter" class="winterIcon button rotate">
+              <img class="icon" src="./winter.svg" alt="" />
+            </div>
+          </div>
+          <div class="out">
+            <div id="pageControl" class="slidecontainer">
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="40"
+                class="slider"
+                id="myRange"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

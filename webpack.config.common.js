@@ -21,6 +21,22 @@ module.exports = {
           from: path.resolve(__dirname, 'public/favicon.png'),
           to: path.resolve(__dirname, 'dist'),
         },
+        {
+          from: path.posix.join(
+            path.resolve(__dirname, "./public").replace(/\\/g, "/"),
+            "*.svg"
+          ),
+          to: path.resolve(__dirname, 'dist'),
+          force: true,
+        },
+        {
+          from: path.posix.join(
+            path.resolve(__dirname, "./public").replace(/\\/g, "/"),
+            "*.mp3"
+          ),
+          to: path.resolve(__dirname, 'dist'),
+          force: true,
+        },
       ],
     }),
     new MiniCssExtractPlugin(),
