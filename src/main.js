@@ -6,8 +6,8 @@ import './decoration.css';
 
 let play = false;                               // воспроизводится ли сейчас музыка
 
-let audio = new Audio();
-audio.src = './assets/sounds/summer.mp3';
+// let audio = new Audio();
+// audio.src = './assets/sounds/summer.mp3';
 
 let btns = document.querySelector('.buttons');
 let bg = document.querySelector('#bg');

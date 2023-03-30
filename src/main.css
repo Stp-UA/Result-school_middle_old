@@ -23,15 +23,15 @@ body {
 }
 
 .summer {
-  background: url(./assets/summer-bg.jpg) no-repeat center;
+  background: url(//localhost:3000/assets/summer-bg.jpg) no-repeat center;
 }
 
 .autumn {
-  background: url(./assets/autumn-bg.jpg) no-repeat center;
+  background: url(//localhost:3000/assets/autumn-bg.jpg) no-repeat center;
 }
 
 .winter {
-  background: url(./assets/winter-bg.jpg) no-repeat center;
+  background: url(//localhost:3000/assets/winter-bg.jpg) no-repeat center;
 }
 
 .out {
@@ -80,11 +80,11 @@ body {
   /* background-color: blue; */
 }
 .summerIcon {
-  background: url(./assets/icons/summer_icon.webp);
+  background: url(//localhost:3000/assets/icons/summer_icon.webp);
 }
 .autumnIcon {
-  background: url(./assets/icons/autumn_icon.webp);
+  background: url(//localhost:3000/assets/icons/autumn_icon.webp);
 }
 .winterIcon {
-  background: url(./assets/icons/winter_icon.webp);
+  background: url(//localhost:3000/assets/icons/winter_icon.webp);
 }
