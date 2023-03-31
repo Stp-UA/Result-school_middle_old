@@ -56,7 +56,7 @@ function noiseChange (event) {
       btn.classList.remove('rotate')
       btn.classList.add('opa')
     }
-    div.classList.add('rotate') // разрешаем нажатие npm для нужного сезона
+    div.classList.add('rotate') // разрешаем нажатие для нужного сезона
     div.classList.remove('opa')
   }
 }
