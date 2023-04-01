@@ -14,18 +14,19 @@ const bg = document.querySelector('#bg') as HTMLDivElement // объект дл�
 const vol = document.querySelector('.slider') as HTMLInputElement // ползунок изменения громкости (inpur)
 const blur = document.querySelector('#blur') as HTMLDivElement // слой поверх бэкграунда для блюра картинки
 
-function noiseChange(event:HTMLElement):void {
+function noiseChange({ target }): void {
+  let targ = target as HTMLElement
   let div: HTMLDivElement // указатель на кликнутый <div> для смены стилей
   let img: HTMLImageElement // указатель на кликнутый <img> для смены иконки
   let season:string // кликнутое время года
-  const targ:HTMLDivElement | HTMLImageElement = event.target // элемент на котором кликнули
+  // const targ:HTMLDivElement | HTMLImageElement = event.target // элемент на котором кликнули
   console.log(targ)
   if (targ.id) { // если у элемента есть id - значит это <div>
-    div = targ
-    img = targ.firstElementChild
+    div = targ as HTMLDivElement
+    img = targ.firstElementChild as HTMLImageElement
   } else {
-    div = targ.parentElement
-    img = targ
+    div = targ.parentElement as HTMLDivElement
+    img = targ as HTMLImageElement
   }
   season = `${div.id}`  //eslint-disable-line
 
@@ -37,10 +38,11 @@ function noiseChange(event:HTMLElement):void {
       play = false
       img.src = `assets/icons/${season}.svg` // возвращаем иконку времени года
       prevSeason = '' // никакой сезон не выбран
-      for (const btn of btns) { // делаем возможным нажатие любых кнопок
-        btn.classList.add('rotate')
-        btn.classList.remove('opa')
-      }
+      btns.forEach(function (btn) { // делаем возможным нажатие любых кнопок
+        let element = btn as HTMLElement
+        element.classList.add('rotate')
+        element.classList.remove('opa')
+      })
     }
   } else {
     bg.className = season // прописываем класс времени года в бэкграунд
@@ -50,11 +52,12 @@ function noiseChange(event:HTMLElement):void {
     img.src = 'assets/icons/pause.svg' // вешаем иконку паузы
     play = true
     prevSeason = season // запоминаем какое время года воспроизводится
-    for (const btn of btns) { // запрещаем нажатие всех кнопок
-      btn.classList.remove('rotate')
-      btn.classList.add('opa')
-    }
-    div.classList.add('rotate') // разрешаем нажатие для нужного сезона
+    btns.forEach(function (btn) { // делаем не возможным нажатие любых кнопок
+      let element = btn as HTMLElement
+      element.classList.remove('rotate')
+      element.classList.add('opa')
+    })
+  div.classList.add('rotate') // разрешаем нажатие для нужного сезона
     div.classList.remove('opa')
   }
 }
