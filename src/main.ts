@@ -3,24 +3,22 @@ import './main.css'
 import './slider.css'
 import './decoration.css'
 
-let play = false // воспроизводится ли сейчас музыка?
-let prevSeason = '' // предыдущее состояние нажатой кнопки (было выбрано время года)
+let play:boolean = false // воспроизводится ли сейчас музыка?
+let prevSeason:string = '' // предыдущее состояние нажатой кнопки (было выбрано время года)
 
-const audio = new Audio()
+const audio:HTMLAudioElement = new Audio()
 audio.loop = true // непрерывное воспроизведение
 
-const btns = document.querySelectorAll('.button') // кнопки в одном массиве
-const bg = document.querySelector('#bg') // объект для изменения картинки бэкграунда
-const vol = document.querySelector('.slider') // ползунок изменения громкости (inpur)
-const blur = document.querySelector('#blur') // слой поверх бэкграунда для блура картинки
+const btns = document.querySelectorAll('.button') as NodeList // кнопки в одном массиве
+const bg = document.querySelector('#bg') as HTMLDivElement // объект для изменения картинки бэкграунда
+const vol = document.querySelector('.slider') as HTMLInputElement // ползунок изменения громкости (inpur)
+const blur = document.querySelector('#blur') as HTMLDivElement // слой поверх бэкграунда для блюра картинки
 
-console.log(btns)
-
-function noiseChange (event) {
-  let div // указатель на кликнутый <div> для смены стилей
-  let img // указатель на кликнутый <img> для смены иконки
-  let season // кликнутое время года
-  const targ = event.target // элемент на котором кликнули
+function noiseChange(event:HTMLElement):void {
+  let div: HTMLDivElement // указатель на кликнутый <div> для смены стилей
+  let img: HTMLImageElement // указатель на кликнутый <img> для смены иконки
+  let season:string // кликнутое время года
+  const targ:HTMLDivElement | HTMLImageElement = event.target // элемент на котором кликнули
   console.log(targ)
   if (targ.id) { // если у элемента есть id - значит это <div>
     div = targ
@@ -29,7 +27,7 @@ function noiseChange (event) {
     div = targ.parentElement
     img = targ
   }
-  season = `${div.id}`
+  season = `${div.id}`  //eslint-disable-line
 
   // обработка нажатий
   if (play) { // идет воспроизведение
