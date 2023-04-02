@@ -8,11 +8,11 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
+    clean: true
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: path.resolve(__dirname, 'public/index.html')
     }),
     new MiniCssExtractPlugin()
   ],
@@ -21,7 +21,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.s[ac]ss$/i,
@@ -32,21 +32,21 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [require('postcss-preset-env')],
-              },
-            },
+                plugins: [require('postcss-preset-env')]
+              }
+            }
           },
-          'sass-loader',
-        ],
+          'sass-loader'
+        ]
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/i,
-        type: 'asset/resource',
+        type: 'asset/resource'
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-      },
-    ],
-  },
+        type: 'asset/resource'
+      }
+    ]
+  }
 }

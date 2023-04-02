@@ -18,8 +18,23 @@ body {
 }
 
 #bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
+  position: relative;
+}
+
+#blur {
+  height: 100%;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.blur {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
 }
 
 .summer {
@@ -76,9 +91,6 @@ body {
   font-size: 4em;
   text-shadow: 1px 1px 0 #fff;
 }
-#pageControl {
-  /* background-color: blue; */
-}
 .summerIcon {
   background: url(//localhost:3000/assets/icons/summer_icon.webp);
 }
@@ -87,4 +99,7 @@ body {
 }
 .winterIcon {
   background: url(//localhost:3000/assets/icons/winter_icon.webp);
+}
+.opa {
+  opacity: 0.3;
 }
