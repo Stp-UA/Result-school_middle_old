@@ -16,7 +16,7 @@ const blur = document.querySelector('#blur') // слой поверх бэкгр
 
 console.log(btns)
 
-function noiseChange (event) {
+function noiseChange(event) {
   let div // указатель на кликнутый <div> для смены стилей
   let img // указатель на кликнутый <img> для смены иконки
   let season // кликнутое время года
@@ -29,7 +29,7 @@ function noiseChange (event) {
     div = targ.parentElement
     img = targ
   }
-  season = `${div.id}`
+  season = `${div.id}` // eslint-disable-line
 
   // обработка нажатий
   if (play) { // идет воспроизведение
