@@ -4,6 +4,15 @@ interface Post {
     body: string
 }
 
+interface Id {
+    [id: string]: Post
+}
+
+interface Out {
+    byId: Id,
+    allIds: string[]
+}
+
 const posts: Post[] = [
     {
       id: '62e69d5a5458aac0ed320b35',
@@ -42,11 +51,20 @@ const posts: Post[] = [
     }
 ];
 
-type Normalize = (unnormalizedData: Post[]) => void
+type Normalize = (unnormalizedData: Post[]) => Out
 
 const normalizeData = (unnormalizedData: Post[]) => {
-
-    // Your code here...
+    let byId: Id = {}
+    let ids: string[]
+    let out: Out
+    let id: string = value.id;
+    for (value of unnormalizedData) {
+        byId[id] = value
+        ids.push(id)
+    }
+    out.byId = byId
+    out.AllIds = ids
+    return out
 };
 
 console.log(normalizeData(posts));
