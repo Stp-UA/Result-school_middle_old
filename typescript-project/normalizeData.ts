@@ -54,17 +54,17 @@ const posts: Post[] = [
 type Normalize = (unnormalizedData: Post[]) => Out
 
 const normalizeData = (unnormalizedData: Post[]) => {
-    let byId: Id = {}
-    let ids: string[]
-    let out: Out
-    let id: string = value.id;
-    for (value of unnormalizedData) {
-        byId[id] = value
-        ids.push(id)
-    }
-    out.byId = byId
-    out.AllIds = ids
-    return out
+  const byId: Id = {}
+  const ids: string[] = []
+  const out: Out = {}
+  unnormalizedData.forEach((value: Post): void => {
+    const id: string = value.id
+    byId[id] = value
+    ids.push(id)
+  })
+  out.byId = byId
+  out.allIds = ids
+  return out
 };
 
 console.log(normalizeData(posts));
