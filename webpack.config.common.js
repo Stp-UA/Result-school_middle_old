@@ -40,16 +40,25 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpe?g|gif)$/i,
-        type: 'asset/resource'
+        test: /\.(png|svg|jpe?g|gif|webp)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[name].[contenthash][ext]'
+        }
       },
       {
         test: /\.(mp3)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[name].[contenthash][ext]'
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[name].[contenthash][ext]'
+        }
       }
     ]
   }

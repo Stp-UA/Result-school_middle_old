@@ -3,6 +3,10 @@ import './main.css'
 import './slider.css'
 import './decoration.css'
 
+// import bgSummer from 'assets/summer-bg.png'
+// import bgAutumn from 'assets/autumn-bg.jpg'
+// import bgWinter from 'assets/winter-bg.jpg'
+
 let play = false // воспроизводится ли сейчас музыка?
 let prevSeason = '' // предыдущее состояние нажатой кнопки (было выбрано время года)
 
