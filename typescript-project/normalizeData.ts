@@ -13,7 +13,7 @@ interface Out {
     allIds: string[]
 }
 
-const posts: Post[] = [
+export const posts: Post[] = [
     {
       id: '62e69d5a5458aac0ed320b35',
       title: 'id labore ex et quam laborum',
@@ -53,10 +53,10 @@ const posts: Post[] = [
 
 type Normalize = (unnormalizedData: Post[]) => Out
 
-const normalizeData = (unnormalizedData: Post[]) => {
+export const normalizeData = (unnormalizedData: Post[]) => {
   const byId: Id = {}
   const ids: string[] = []
-  const out: Out = {}
+  const out = {} as Out
   unnormalizedData.forEach((value: Post): void => {
     const id: string = value.id
     byId[id] = value
