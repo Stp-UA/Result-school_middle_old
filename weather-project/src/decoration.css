@@ -1,0 +1,14 @@
+/* .button:hover {
+  box-shadow: 5px 5px 1px #ac3700, -5px -5px 1px #043681;
+} */
+
+.rotate {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.rotate:hover {
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+  box-shadow: 5px 5px 1px #ac3700, -5px -5px 1px #043681;
+}
