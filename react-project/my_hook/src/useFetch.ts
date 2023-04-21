@@ -23,12 +23,12 @@ type Action<T> =
   { type: 'fetched'; payload: T } |
   { type: 'error'; payload: Error }
 
-export function useFetch<T = unknown>(url: string, options?: RequestInitParams): Answer<T> {
+export function useFetch<T>(url: string, options?: RequestInitParams): Answer<T> {
     const cancelRequest = useRef<boolean>(false)
 
     const initState: State<T> = {
         data: undefined,
-        isLoading: true,
+        isLoading: false,
         error: undefined,
     }
 
@@ -47,6 +47,7 @@ export function useFetch<T = unknown>(url: string, options?: RequestInitParams):
 
     const refetch = (prop: RequestParams): void => {
         options = prop.params
+        console.log(options)
     }
 
     const [state, dispatch] = useReducer(fetchReducer, initState)

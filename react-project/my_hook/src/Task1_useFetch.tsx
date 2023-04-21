@@ -1,12 +1,8 @@
 import { useFetch } from './useFetch'
 
-interface RequestInitParams extends RequestInit {
-    _limit: number
-}
-
-interface RequestParams {
-    params: RequestInitParams
-}
+// interface RequestInitParams extends RequestInit {
+//     _limit: number
+// }
 
 interface Post {
     userId: number,
@@ -15,19 +11,12 @@ interface Post {
     body: string
 }
 
-interface Fetch {
-    data: Post[] | undefined,
-    isLoading: boolean,
-    error: Error | undefined
-    refetch: (params: RequestParams) => void
-}
 
 const URL_POSTS: string = 'https://jsonplaceholder.typicode.com/posts';
 // const URL_POSTS: string = 'https://jsonplaceholder.typicode.com/posts?_limit=3';
 
 function Demo() {
-    const request: Fetch = useFetch(URL_POSTS);
-    console.log(fetch)
+    const request = useFetch<Post[]>(URL_POSTS);
 
     return (
         <div>
