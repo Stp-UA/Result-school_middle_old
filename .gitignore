@@ -1,3 +1,4 @@
-node_modules/
-img_final.png
-dist/
+node_modules
+dist
+.idea
+.vscode
